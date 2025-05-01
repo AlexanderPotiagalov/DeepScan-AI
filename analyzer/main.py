@@ -1,7 +1,10 @@
 from fastapi import FastAPI, UploadFile, File
 import cv2
 import os
-import random
+from mesonet import MesoNetDetector
+
+detector = MesoNetDetector()
+
 app = FastAPI()
 
 @app.post("/extract-frames/")
@@ -27,10 +30,13 @@ async def extract_frames(file: UploadFile = File(...)):
             full_path = os.path.join(output_dir, name)
             cv2.imwrite(full_path, frame)
 
+            score = detector.predict_frame(full_path)
+            print(f"Frame {frame_count}: {score:.3f}")
             results.append({
                 "filename": f"frames/{name}",
-                "manipulation_score": round(random.uniform(0, 1), 2)
+                "manipulation_score": round(score, 2)
             })
+
         frame_count += 1
 
     cap.release()
