@@ -24,7 +24,7 @@ app.post("/analyze", upload.single("video"), async (req, res) => {
       }
     );
 
-    fs.unlinkSync(videoPath); // delete temp file
+    fs.unlinkSync(videoPath);
 
     res.json({
       message: "Frames extracted",
