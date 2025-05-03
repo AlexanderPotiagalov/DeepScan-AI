@@ -486,3 +486,535 @@
     opacity: 0;
   }
 }
+
+/* Button Styles */
+.analyzeButton,
+.resetButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  color: var(--text);
+  width: 220px;
+}
+
+.analyzeButton {
+  background: linear-gradient(135deg, var(--accent), var(--primary-dark));
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+}
+
+.resetButton {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.analyzeButton:hover,
+.resetButton:hover {
+  transform: translateY(-2px);
+}
+
+.analyzeButton:active,
+.resetButton:active {
+  transform: translateY(1px);
+}
+
+.buttonIcon {
+  position: relative;
+  z-index: 2;
+}
+
+.buttonGlow {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: moveGlow 3s infinite;
+}
+
+@keyframes moveGlow {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.errorContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  font-size: 0.9rem;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Results Section Styles */
+.resultsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 1rem;
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resultCard {
+  width: 100%;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.resultAuthentic {
+  border-top: 3px solid var(--success);
+}
+
+.resultFake {
+  border-top: 3px solid var(--danger);
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.resultIconContainer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.authenticIcon {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+  box-shadow: 0 0 20px var(--success-glow);
+}
+
+.fakeIcon {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+  box-shadow: 0 0 20px var(--danger-glow);
+}
+
+.resultTitleContainer {
+  flex: 1;
+}
+
+.resultTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.confidenceLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.confidenceValue {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.progressBarWrapper {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.progressMarkers {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+
+.marker {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 8px;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    90deg,
+    rgba(239, 68, 68, 0.3) 0%,
+    rgba(250, 204, 21, 0.3) 50%,
+    rgba(16, 185, 129, 0.3) 75%
+  );
+  opacity: 0.3;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 4px;
+  position: relative;
+  transition: width 1s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.progressBarAuthentic {
+  background: linear-gradient(90deg, var(--success-dark), var(--success));
+}
+
+.progressBarFake {
+  background: linear-gradient(90deg, var(--danger-dark), var(--danger));
+}
+
+.progressGlow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4));
+  animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.progressThumb {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  z-index: 2;
+}
+
+.resultDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 1rem 0 0;
+  line-height: 1.5;
+}
+
+/* Frames Analysis Section */
+.framesSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.framesTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+}
+
+.framesIcon {
+  color: var(--primary);
+}
+
+.frameSeparator {
+  flex: 1;
+  height: 1px;
+  margin-left: 1rem;
+  background: linear-gradient(90deg, var(--border), transparent);
+}
+
+.framesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.frameCard {
+  background: rgba(30, 41, 59, 0.6);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.frameCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px #818cf8;
+}
+
+.frameImageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.frameImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frameOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(15, 23, 42, 0.6) 0%,
+    rgba(15, 23, 42, 0) 50%
+  );
+}
+
+.frameIndicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.authenticIndicator {
+  background-color: var(--success);
+  box-shadow: 0 0 8px var(--success-glow);
+}
+
+.fakeIndicator {
+  background-color: var(--danger);
+  box-shadow: 0 0 8px var(--danger-glow);
+}
+
+.frameNumber {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.frameDetails {
+  padding: 1rem;
+}
+
+.frameScoreHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.frameScoreLabel {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.frameScoreValue {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.authenticScore {
+  color: var(--success);
+}
+
+.fakeScore {
+  color: var(--danger);
+}
+
+.frameProgressContainer {
+  height: 4px;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.frameProgressBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+
+.frameProgressBar {
+  height: 100%;
+  transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.authenticProgressBar {
+  background: linear-gradient(90deg, var(--success-dark), var(--success));
+}
+
+.fakeProgressBar {
+  background: linear-gradient(90deg, var(--danger-dark), var(--danger));
+}
+
+.frameProgressGlow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5));
+}
+
+/* Footer Styles */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.footerLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footerLink:hover {
+  color: var(--primary);
+}
+
+.footerDivider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 1rem;
+  }
+
+  .dropzone {
+    height: 250px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .framesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .dropzone {
+    height: 200px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .framesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footerDivider {
+    display: none;
+  }
+}
