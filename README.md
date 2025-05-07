@@ -1,7 +1,7 @@
 <div align="left">
-  <img src="https://raw.githubusercontent.com/AlexanderPotiagalov/DeepScan-AI/DeepScanImage.jpeg" width="30%" align="left" style="margin-right: 15px; margin-top: 40px;"/>
+  <img src="https://raw.githubusercontent.com/AlexanderPotiagalov/DeepScan-AI/main/DeepScanImage.jpeg" space-top: 100; width="35%" align="left" style="margin-right: 15; margin-top: 60;"/>
   <div style="display: inline-block;">
-    <h1 style="margin-top: 0;">DeepScan-AI</h1>
+    <h1 style="display: inline-block; vertical-align: middle; margin-top: 0;">DeepScan-AI</h1>
     <p><em>AI-powered DeepFake Detection using frame-by-frame video analysis</em></p>
     <p>
       <img src="https://img.shields.io/github/license/AlexanderPotiagalov/DeepScan-AI?style=flat-square&color=blueviolet" alt="license">
