@@ -1,7 +1,7 @@
 <div align="left">
-  <img src="https://raw.githubusercontent.com/AlexanderPotiagalov/DeepScan-AI/main/DeepScanImage.jpeg" space-top: 100; width="35%" align="left" style="margin-right: 15; margin-top: 60;"/>
   <div style="display: inline-block;">
     <h1 style="display: inline-block; vertical-align: middle; margin-top: 0;">DeepScan-AI</h1>
+    <img src="https://raw.githubusercontent.com/AlexanderPotiagalov/DeepScan-AI/main/DeepScanImage.jpeg" space-top: 100; width="25%" align="left" style="margin-right: 15; margin-top: 60;"/>
     <p><em>AI-powered DeepFake Detection using frame-by-frame video analysis</em></p>
     <p>
       <img src="https://img.shields.io/github/license/AlexanderPotiagalov/DeepScan-AI?style=flat-square&color=blueviolet" alt="license">
@@ -160,7 +160,7 @@ cd DeepScan-AI
 cd analyzer
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+pip install fastapi==0.95.2 uvicorn==0.22.0 numpy==1.24.4 opencv-python==4.8.0.76 tensorflow==2.11.0 python-multipart==0.0.6 pydantic==1.10.13
 uvicorn main:app --reload
 ```
 > The backend will start at: http://localhost:8000
