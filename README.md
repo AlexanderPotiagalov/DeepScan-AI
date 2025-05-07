@@ -29,12 +29,12 @@
 <details><summary>📜 Table of Contents</summary>
 
 - [📖 Overview](#-overview)
+- [📷 UI Screenshots](#-ui-screenshots)
 - [✨ Features](#-features)
 - [🧠 Technology Stack](#-technology-stack)
 - [🧠 How It Works](#-how-it-works)
 - [📂 Project Structure](#-project-structure)
 - [🚀 Getting Started](#-getting-started)
-- [📷 UI Screenshots](#-ui-screenshots)
 - [🧑‍💻 Author](#-author)
 
 </details>
@@ -44,6 +44,17 @@
 ## 📖 Overview
 
 **DeepScan-AI** is a full-stack AI application for detecting deepfakes in videos. It leverages a custom-trained TensorFlow model to analyze individual frames and computes an overall verdict of authenticity.
+
+---
+
+## 📸 UI Screenshots
+
+<div align="center">
+  <img src="DeepScan2.png" width="25%" style="border-radius: 12px; margin-right: 10px;"/>
+  <img src="DeepScan1.png" width="21%" style="border-radius: 12px; margin-right: 10px;"/>
+  <img src="DeepScan3.png" width="25%" style="border-radius: 12px;"/>
+  <img src="DeepScan4.png" width="25%" style="border-radius: 12px;"/>
+</div>
 
 ---
 
