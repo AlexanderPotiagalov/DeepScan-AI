@@ -1,7 +1,12 @@
 <div align="left">
   <div style="display: inline-block;">
     <h1 style="display: inline-block; vertical-align: middle; margin-top: 0;">DeepScan-AI</h1>
-    <img src="https://raw.githubusercontent.com/AlexanderPotiagalov/DeepScan-AI/main/DeepScanImage.jpeg" space-top: 100; width="25%" align="left" style="margin-right: 15; margin-top: 60;"/>
+    <img
+      src="https://raw.githubusercontent.com/AlexanderPotiagalov/DeepScan-AI/main/DeepScanImage.jpeg"
+      width="25%"
+      align="left"
+      style="margin-right: 15; margin-top: 60;"
+    />
     <p><em>AI-powered DeepFake Detection using frame-by-frame video analysis</em></p>
     <p>
       <img src="https://img.shields.io/github/license/AlexanderPotiagalov/DeepScan-AI?style=flat-square&color=blueviolet" alt="license">
@@ -18,6 +23,13 @@
       <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow">
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
       <img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white" alt="Axios">
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
+      <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React">
+      <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV">
+      <img src="https://img.shields.io/badge/Keras-D00000?style=flat-square&logo=keras&logoColor=white" alt="Keras">
+      <img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white" alt="Express.js">
+      <img src="https://img.shields.io/badge/Multer-665A4F?style=flat-square" alt="Multer">
+      <img src="https://img.shields.io/badge/Neural_Networks-563D7C?style=flat-square" alt="Neural Networks">
     </p>
   </div>
 </div>
